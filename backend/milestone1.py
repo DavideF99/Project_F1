@@ -1,15 +1,15 @@
-import streamlit as st 
+##################################### Basic uvicorn #####################################
 
-st.title("Hello this is the first milestone of project F1 👋")
-st.markdown(
-    """
-    Start date: Monday 4 August 2025 🗓️
+from fastapi import FastAPI
+import uvicorn
 
-    This is the start of a project that I hope will help me learn useful Python skills and help me build something that interests me. 
+app = FastAPI()
 
-    The aim of this project is to build an F1 web-app that is capable of providing static and dynamic dashboards. Hopefully I can create a working analytics F1 dashboard before the end of the F1 summer break 2025! 🏎️
-    """
-)
+@app.get("/")
+def root():
+    return {"message": "Hello from Project F1 backend!"}
 
-if st.button("Let's celebrate the start of my project 🎉"):
-    st.balloons()
+if __name__ == "__main__":
+    uvicorn.run("backend.milestone1:app", host="127.0.0.1", port=5000, log_level="info")
+
+# run in CLI with -> "python -m backend.milestone1"
