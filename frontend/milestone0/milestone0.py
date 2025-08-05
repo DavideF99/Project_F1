@@ -15,3 +15,5 @@ st.markdown(
 
 if st.button("Let's celebrate the start of my project 🎉"):
     st.balloons()
+
+# run script using the CLI command -> streamlit run frontend/milestone0/milestone0.py
